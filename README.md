@@ -7,6 +7,16 @@ A Django widget with [Select2](http://ivaynberg.github.com/select2/) integration
 
 Use the following command: <b><i>pip install twentytab-select2</i></b>
 
+## Configuration
+
+- Static files
+
+Run collectstatic command or map static directory. If you use uWSGI you can map static files:
+
+```ini
+static-map = /static/select2/=%(path_to_site_packages)/select2/static/select2
+```
+
 ## Usage
 
 - forms.py
