@@ -58,7 +58,7 @@ class SelectMultipleAutocomplete(forms.SelectMultiple):
                 opts += u' data-{}="{}"'.format(k, v)
         res = mark_safe(
             u"""
-            <span class="select2-init" id="select2-init-%s"%s></span>
+            <span class="select2-init" id="select2-init-{}"{}></span>
             {}
             """.format(attrs['id'], opts, res)
         )
