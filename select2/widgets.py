@@ -34,10 +34,10 @@ class SelectAutocomplete(forms.Select):
     class Media:
         js = (
             settings.JQUERY_LIB,
-            u'{}select2/{}/select2.min.js'.format(settings.STATIC_URL, settings.SELECT2_VERSION),
+            settings.SELECT2_LIB,
             u'{}select2/js/select2__init.js'.format(settings.STATIC_URL),
         )
-        css = {u"all": (u"{}select2/{}/select2.css".format(settings.STATIC_URL, settings.SELECT2_VERSION),)}
+        css = {u"all": (settings.SELECT2_CSS_LIB,)}
 
 
 class SelectMultipleAutocomplete(forms.SelectMultiple):
@@ -67,7 +67,7 @@ class SelectMultipleAutocomplete(forms.SelectMultiple):
     class Media:
         js = (
             settings.JQUERY_LIB,
-            u'{}select2/{}/select2.min.js'.format(settings.STATIC_URL, settings.SELECT2_VERSION),
+            settings.SELECT2_LIB,
             u'{}select2/js/select2__init.js'.format(settings.STATIC_URL),
         )
-        css = {u"all": (u"{}select2/{}/select2.css".format(settings.STATIC_URL, settings.SELECT2_VERSION),)}
+        css = {u"all": (settings.SELECT2_CSS_LIB,)}
