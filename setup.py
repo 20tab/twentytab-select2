@@ -10,7 +10,7 @@ setup(
     url='https://github.com/20tab/twentytab-select2',
     license='MIT License',
     install_requires=[
-        'Django >=1.6',
+        'Django',
         'django-appconf>=0.6',
     ],
     packages=find_packages(),

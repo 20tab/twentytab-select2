@@ -6,6 +6,7 @@ from django.conf import settings
 from django.utils.safestring import mark_safe
 from . import conf
 
+
 class SelectAutocomplete(forms.Select):
     """
     jQuery Plugin documentation: http://ivaynberg.github.io/select2/
