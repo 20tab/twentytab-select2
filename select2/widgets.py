@@ -20,9 +20,10 @@ class SelectAutocomplete(forms.Select):
     def render(self, name, value, attrs=None, choices=()):
         res = super(SelectAutocomplete, self).render(name, value, attrs, choices)
         opts = u""
-        if self.plugin_options:
-            for k, v in self.plugin_options.items():
-                opts += u' data-{0}="{1}"'.format(k, v)
+        opts_dict = {u'width': u'300px'}
+        opts_dict.update(self.plugin_options)
+        for k, v in opts_dict.items():
+            opts += u' data-{0}="{1}"'.format(k, v)
 
         res = mark_safe(
             u"""
@@ -54,9 +55,10 @@ class SelectMultipleAutocomplete(forms.SelectMultiple):
     def render(self, name, value, attrs=None, choices=()):
         res = super(SelectMultipleAutocomplete, self).render(name, value, attrs, choices)
         opts = ""
-        if self.plugin_options:
-            for k, v in self.plugin_options.items():
-                opts += u' data-{0}="{1}"'.format(k, v)
+        opts_dict = {u'width': u'300px'}
+        opts_dict.update(self.plugin_options)
+        for k, v in opts_dict.items():
+            opts += u' data-{0}="{1}"'.format(k, v)
         res = mark_safe(
             u"""
             <span class="select2-init" id="select2-init-{0}"{1}></span>
