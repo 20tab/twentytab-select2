@@ -51,9 +51,10 @@ class TestForm(forms.ModelForm):
     class Meta:
         model = ModelTest
         widgets = {
-            'myfield': SelectAutocomplete(plugin_options={"width": "300px"}),
-            'mymultiplefield': SelectMultipleAutocomplete(plugin_options={"width": "300px"}),
+            'myfield': SelectAutocomplete(),
+            'mymultiplefield': SelectMultipleAutocomplete(),
         }
 
 
 ```
+Both widgets take a parameter called "plugin_options". It's a dictionary and it can take all select2 options.
