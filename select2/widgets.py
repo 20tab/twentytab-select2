@@ -22,12 +22,12 @@ class SelectAutocomplete(forms.Select):
         opts = u""
         if self.plugin_options:
             for k, v in self.plugin_options.items():
-                opts += u' data-{}="{}"'.format(k, v)
+                opts += u' data-{0}="{1}"'.format(k, v)
 
         res = mark_safe(
             u"""
-            <span class="select2-init" id="select2-init-{}"{}></span>
-            {}
+            <span class="select2-init" id="select2-init-{0}"{1}></span>
+            {2}
             """.format(attrs['id'], opts, res)
         )
         return res
@@ -36,7 +36,7 @@ class SelectAutocomplete(forms.Select):
         js = (
             settings.JQUERY_LIB,
             settings.SELECT2_LIB,
-            u'{}select2/js/select2__init.js'.format(settings.STATIC_URL),
+            u'{0}select2/js/select2__init.js'.format(settings.STATIC_URL),
         )
         css = {u"all": (settings.SELECT2_CSS_LIB,)}
 
@@ -56,11 +56,11 @@ class SelectMultipleAutocomplete(forms.SelectMultiple):
         opts = ""
         if self.plugin_options:
             for k, v in self.plugin_options.items():
-                opts += u' data-{}="{}"'.format(k, v)
+                opts += u' data-{0}="{1}"'.format(k, v)
         res = mark_safe(
             u"""
-            <span class="select2-init" id="select2-init-{}"{}></span>
-            {}
+            <span class="select2-init" id="select2-init-{0}"{1}></span>
+            {2}
             """.format(attrs['id'], opts, res)
         )
         return res
@@ -69,6 +69,6 @@ class SelectMultipleAutocomplete(forms.SelectMultiple):
         js = (
             settings.JQUERY_LIB,
             settings.SELECT2_LIB,
-            u'{}select2/js/select2__init.js'.format(settings.STATIC_URL),
+            u'{0}select2/js/select2__init.js'.format(settings.STATIC_URL),
         )
         css = {u"all": (settings.SELECT2_CSS_LIB,)}
