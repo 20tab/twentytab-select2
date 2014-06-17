@@ -33,12 +33,12 @@ class SelectAutocomplete(forms.Select):
         return res
 
     class Media:
-        js = (
-            settings.JQUERY_LIB,
-            settings.SELECT2_LIB,
-            u'{0}select2/js/select2__init.js'.format(settings.STATIC_URL),
+        js = tuple([lib for lib in (settings.JQUERY_LIB, settings.SELECT2_LIB) if lib])
+        js += (
+             u'{0}select2/js/select2__init.js'.format(settings.STATIC_URL),
         )
-        css = {u"all": (settings.SELECT2_CSS_LIB,)}
+        if settings.SELECT2_CSS_LIB:
+            css = {u"all": (settings.SELECT2_CSS_LIB,)}
 
 
 class SelectMultipleAutocomplete(forms.SelectMultiple):
@@ -66,9 +66,9 @@ class SelectMultipleAutocomplete(forms.SelectMultiple):
         return res
 
     class Media:
-        js = (
-            settings.JQUERY_LIB,
-            settings.SELECT2_LIB,
+        js = tuple([lib for lib in (settings.JQUERY_LIB, settings.SELECT2_LIB) if lib])
+        js += (
             u'{0}select2/js/select2__init.js'.format(settings.STATIC_URL),
         )
-        css = {u"all": (settings.SELECT2_CSS_LIB,)}
+        if settings.SELECT2_CSS_LIB:
+            css = {u"all": (settings.SELECT2_CSS_LIB,)}
