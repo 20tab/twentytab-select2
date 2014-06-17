@@ -4,15 +4,15 @@ from django.conf import settings
 
 class Select2Conf(AppConf):
     STATIC_URL = u'/static/'
-    JQUERY_LIB = u"{}{}".format(
+    JQUERY_LIB = u"{0}{1}".format(
         getattr(settings, u'STATIC_URL', u'/static/'),
         u"select2/js/jquery-2.1.0.min.js"
     )
-    SELECT2_LIB = u"{}{}".format(
+    SELECT2_LIB = u"{0}{1}".format(
         getattr(settings, u'STATIC_URL', u'/static/'),
         u"select2/select2-3.4.5/select2.min.js"
     )
-    SELECT2_CSS_LIB = u"{}{}".format(
+    SELECT2_CSS_LIB = u"{0}{1}".format(
         getattr(settings, u'STATIC_URL', u'/static/'),
         u"select2/select2-3.4.5/select2.css"
     )
