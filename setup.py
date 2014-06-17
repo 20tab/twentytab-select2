@@ -11,7 +11,7 @@ setup(
     license='MIT License',
     install_requires=[
         'Django',
-        'django-appconf>=0.6',
+        'django-appconf',
     ],
     packages=find_packages(),
     include_package_data=True,

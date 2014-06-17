@@ -34,7 +34,7 @@ SELECT2_CSS_LIB = 'path_to_select2_css'
 ```
 - Static files
 
-Run collectstatic command or map static directory. 
+Run collectstatic command or map static directory.
 
 ## Usage
 
