@@ -18,7 +18,6 @@ jQuery(function(){
         //It capture html change event and it should select the selected item.
         //Doesn't work yet
         if($('#select2-init-'+$(this).attr('id')).hasClass('processed')){
-            console.log($(this).attr('id'));
             $(this).select2('destroy');
             $('#select2-init-'+$(this).attr('id')).removeClass('processed');
             $(this).find('option').removeAttr('selected');
