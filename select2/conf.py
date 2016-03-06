@@ -6,16 +6,17 @@ class Select2Conf(AppConf):
     STATIC_URL = u'/static/'
     JQUERY_LIB = u"{0}{1}".format(
         getattr(settings, u'STATIC_URL', u'/static/'),
-        u"select2/js/jquery-2.1.0.min.js"
+        u"select2/select2-4.0.2/lib/jquery-2.1.0.min.js"
     )
     SELECT2_LIB = u"{0}{1}".format(
         getattr(settings, u'STATIC_URL', u'/static/'),
-        u"select2/select2-3.4.5/select2.min.js"
+        u"select2/select2-4.0.2/js/select2.full.min.js"
     )
     SELECT2_CSS_LIB = u"{0}{1}".format(
         getattr(settings, u'STATIC_URL', u'/static/'),
-        u"select2/select2-3.4.5/select2.css"
+        u"select2/select2-4.0.2/css/select2.min.css"
     )
+    SELECT2_DEFAULTS = {u"width": "300"}
 
     def configure_static_url(self, value):
         if not getattr(settings, 'STATIC_URL', None):
@@ -40,3 +41,9 @@ class Select2Conf(AppConf):
             self._meta.holder.SELECT2_CSS_LIB = value
             return value
         return getattr(settings, 'SELECT2_CSS_LIB')
+
+    def configure_select2_defaults(self, value):
+        if not getattr(settings, 'SELECT2_DEFAULTS', None):
+            self._meta.holder.SELECT2_DEFAULTS = value
+            return value
+        return getattr(settings, 'SELECT2_DEFAULTS')
